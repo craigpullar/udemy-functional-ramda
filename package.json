@@ -1,0 +1,24 @@
+{
+  "name": "udemy-functional-ramda",
+  "version": "1.0.0",
+  "description": "Follow along code to https://www.udemy.com/learning-functional-javascript-with-ramda",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/craigpullar/udemy-functional-ramda.git"
+  },
+  "author": "craigmichaelpullar@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craigpullar/udemy-functional-ramda/issues"
+  },
+  "homepage": "https://github.com/craigpullar/udemy-functional-ramda#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
