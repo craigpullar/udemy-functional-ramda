@@ -2,6 +2,7 @@ const add = (a, b) => a + b;
 
 console.log(add(1));
 
+// My initial attempt at a curry function
 const curry = (fn, callLength = 0) => {
   const maxCallLength = fn.length;
   return (arg) => {
@@ -65,3 +66,33 @@ const myRetrievedPosts2 = fetchFromServer()
   .then(console.log);
 
 console.log(myRetrievedPosts2);
+
+// Courses curry function
+
+const curry2 = (fn) => {
+  const arity = fn.length;
+  return function f1(...args) {
+    if (args.length >= arity) {
+      return fn(...args);
+    }
+    return (...moreArgs) => f1(...args, ...moreArgs);
+  };
+};
+
+const curriedAdd2 = curry2(add);
+console.log(curriedAdd2(1)(2));
+
+// My attempt did not give the option for passing multiple
+// args in one go, and theres is long code so...
+
+const superiorCurry = (fn) => {
+  const arity = fn.length;
+  return (...args) => (args.length >= arity
+    ? fn(...args)
+    : curry(fn.bind(this, ...args)));
+};
+
+const superiorCurriedAdd = superiorCurry(add);
+
+console.log(superiorCurriedAdd(1, 2));
+console.log(superiorCurriedAdd(1)(2));
